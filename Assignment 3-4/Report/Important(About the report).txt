@@ -1,0 +1,3 @@
+The report contains an input file and an output file.Since ,I needed to check the working of istream I had to take inputs from the user.
+The user inputs that I took to demonstrate the correctness of the istream function for Date is in the input file input.txt.
+The rest tests were hard-coded.

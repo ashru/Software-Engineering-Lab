@@ -1,0 +1,266 @@
++++Checking the constructors of dateformat 
+Default constructor:dateformat=dd-mm-yy
+Checking construcor taking 3 string arguments
+Parameters:(dd,m,yyyy)dateformat=dd-m-yyyy
+Parameters:(ddd,m,yyyy)dateformat=
+Checking construcor taking 1 string argument
+Parameters:(dd-mm-yy):dateformat=dd-mm-yy
+Parameters:(dd-mmmmmmm-yy):dateformat=
+Invalid Date FormatChecking set format and get format functions(After Date::setFormat(df) we print by getFormat(df)(df=dd-mm-yyyy))
+dd-mm-yyyy
++++Checking the Date Constructors
+Checking the default constructor of Date
+The current system date,d1=07-03-2016
+Checking the constructor explicit Date(const char *) of Date
+Parameter passed:29-02-2016
+New date constructed=29-02-2016
+Parameter passed:29-02-16
+Invalid argument:Invalid date format!
+Parameter passed:31-02-2016
+Domain Error:February has 28 or 29 days !
+Parameter passed:37-09-2016
+Invalid argument:Invalid date!!
+Parameter passed:30-13-2016
+Invalid argument:Invalid month!!
+Parameter passed:30-12-2088
+Out of Range:This date does ot lie between 1st Jan 1950 and 31st Dec 2049
+Checking the constructor Date(Date d,Month m,Year y) of Date
+Parameter passed:(D01,Dec,2012)
+New date constructed=01-12-2012
+Parameter passed:(D30,Feb,2012)
+Domain Error:February has 28 or 29 days !
+Parameter passed:(static_cast<Day>(32),Jun,2015)
+Invalid Argument:No of days in a month lies in between 1-31!!
+Parameter passed:(D05,static_cast<Day>(15),2015)
+Invalid Argument:No of months in a year lies in between 1-12!!
+Parameter passed:(D06,Jun,2051)
+Out of Range:This date does ot lie between 1st Jan 1950 and 31st Dec 2049
+Checking the copy constructor of Date:
+d1=07-03-2016
+Date d2(d1)=07-03-2016
+Checking the copy assignment operator of Date:
+d1=07-07-2008
+Date d2=d1=07-07-2008
++++Checking the pre increment ++ operator of Date
+d1=28-02-2011
+After ++d1, d1=01-03-2011
+d1=31-12-2049
+Out of Range:This date does ot lie between 1st Jan 1950 and 31st Dec 2049
+d1=28-02-2016
+After ++d1, d1=29-02-2016
+d1=31-12-2011
+After ++d1, d1=01-01-2012
++++Checking the post increment ++ operator of Date
+d1=25-02-2011
+After d1++, d1=04-03-2011
+d1=30-12-2049
+Out of Range:This date does ot lie between 1st Jan 1950 and 31st Dec 2049
+d1=25-02-2016
+After d1++, d1=03-03-2016
+d1=28-12-2011
+After d1++, d1=04-01-2012
++++Checking the pre decrement -- operator of Date
+d1=01-03-2011
+After --d1, d1=28-02-2011
+d1=01-01-1950
+After ++d1, d1=02-01-1950
+d1=01-03-2016
+After --d1, d1=29-02-2016
+d1=01-01-2011
+After --d1, d1=31-12-2010
++++Checking the post decrement -- operator of Date
+d1=05-03-2011
+After d1--, d1=26-02-2011
+d1=05-01-1950
+Out of Range:This date does ot lie between 1st Jan 1950 and 31st Dec 2049
+d1=06-03-2016
+After d1--, d1=28-02-2016
+d1=03-01-2011
+After d1--, d1=27-12-2010
++++Checking the + operator for Date
+d1=30-12-2016
+d1+368=02-01-2018
+d1=30-12-2049
+Out of Range:This date does ot lie between 1st Jan 1950 and 31st Dec 2049
+d1=28-02-2015
+d1+366=29-02-2016
+d1=28-02-2016
+d1+368=02-03-2017
++++Checking the - operator for Date
+d1=28-02-2015   d2=29-02-2016
+d1-d2=366
+d1=01-01-1950   d2=31-12-2049
+d1-d2=36524
++++Checking the cast operator WeekNumber: 
+d1=02-03-2016     static_cast<WeekNumber>(d1)=9
+d1=01-01-2016     static_cast<WeekNumber>(d1)=53
+d1=31-12-2012     static_cast<WeekNumber>(d1)1
+d1=31-12-2016     static_cast<WeekNumber>(d1)=52
+d1=31-12-2015    static_cast<WeekNumber>(d1)=53
+Checking cast operaor WeekDay for Date
+d1=02-03-2015    static_cast<WeekDay>(d1)=1
+d1=27-06-1996    static_cast<WeekDay>(d1)=4
+Checking cast operaor Month for Date
+d1=02-03-2015    static_cast<Month>(d1)=3
+d1=27-06-1996    static_cast<Month>(d1)=6
++++Testing the relational operators...
+22-07-2011!=02-02-2015
+02-02-2015==02-02-2015
+02-08-2005!=02-02-2015
+02-02-2015==02-02-2015
+12-12-2016>=02-02-2015
+22-07-2011<02-02-2015
+07-02-1996<=02-02-2015
+08-02-2016>02-02-2015
+07-02-1996<08-02-2016
+12-12-2016>=08-02-2016
+12-12-2016>22-07-2011
+02-08-2005<=22-07-2011
++++Checking all the date formats
+dd-mm-yy:04-03-18
+d-mm-yy:4-03-18
+0-mm-yy:03-18
+dd-m-yy:04-3-18
+d-m-yy:4-3-18
+0-m-yy:3-18
+dd-mm-yy:04-03-18
+d-mmm-yy:4-Mar-18
+0-mmm-yy:Mar-18
+dd-0-yy:04-March-18
+d-0-yy:4-March-18
+0-0-yy:March-18
+dd-mm-yyyy:04-03-2018
+d-mm-yyyy:4-03-2018
+0-mm-yyyy:03-2018
+dd-m-yyyy:04-3-2018
+d-m-yyyy:4-3-2018
+0-m-yyyy:3-2018
+dd-mmm-yyyy:04-Mar-2018
+d-mmm-yyyy:4-Mar-2018
+0-mmm-yyyy:Mar-2018
+dd-0-yyyy:04-March-2018
+d-0-yyyy:4-March-2018
+0-0-yyyy:March-2018
+dd-mm-0:04-03
+d-mm-0:4-03
+0-mm-0:03
+dd-m-0:04-3
+d-m-0:4-3
+0-m-0:3
+dd-mmm-0:04-Mar
+d-mmm-0:4-Mar
+0-mmm-0:Mar
+dd-0-0:04-March
+d-0-0:4-March
+0-0-0:March
+dd-mm-yy
+02-06-12:02-06-12
+02-06-2012:Invalid argument:Invalid date format!
+d-mm-yy
+2-06-12:2-06-12
+2-06-2012:Invalid argument:Invalid date format!
+d-mm-yyyy
+2-06-2012:2-06-2012
+02-6-12:Invalid argument:Invalid date format!
+dd-mm-yyyy
+02-06-2012:02-06-2012
+2-06-2012:Invalid argument:Invalid date format!
+dd-m-yy
+02-6-12:02-6-12
+02-6-2012:Invalid argument:Invalid date format!
+dd-m-yyyy
+02-6-2012:02-6-2012
+2-06-2012:Invalid argument:Invalid date format!
+d-m-yy
+2-6-12:2-6-12
+2-06-2012:Invalid argument:Invalid date format!
+d-m-yyyy
+2-6-2012:2-6-2012
+2-06-2012:Invalid argument:Invalid date format!
+dd-mmm-yy
+2-06-12:Invalid argument:Invalid date format for input!
+dd-mmm-yyyy
+2-06-12:Invalid argument:Invalid date format for input!
+d-mmm-yy
+2-06-12:Invalid argument:Invalid date format for input!
+d-mmm-yyyy
+2-06-12:Invalid argument:Invalid date format for input!
+0-mmm-yy
+2-06-12:Invalid argument:Invalid date format for input!
+0-mmm-yyyy
+2-06-12:Invalid argument:Invalid date format for input!
+0-mmm-0
+2-06-12:Invalid argument:Invalid date format for input!
+d-mmm-0
+2-06-12:Invalid argument:Invalid date format for input!
+dd-mmm-0
+2-06-12:Invalid argument:Invalid date format for input!
+d-0-yy
+2-06-12:Invalid argument:Invalid date format for input!
+dd-0-yy
+2-06-12:Invalid argument:Invalid date format for input!
+d-0-yyyy
+2-06-12:Invalid argument:Invalid date format for input!
+dd-0-yyyy
+2-06-12:Invalid argument:Invalid date format for input!
+0-0-0
+2-06-12:Invalid argument:Invalid date format for input!
+0-0-yy
+2-06-12:Invalid argument:Invalid date format for input!
+0-0-yyyy
+2-06-12:Invalid argument:Invalid date format for input!
+d-0-0
+2-06-12:Invalid argument:Invalid date format for input!
+dd-0-0
+2-06-12:Invalid argument:Invalid date format for input!
+0-mm-yy
+2-06-12:Invalid argument:Invalid date format for input!
+0-mm-yyyy
+2-06-12:Invalid argument:Invalid date format for input!
+0-m-yy
+2-06-12:Invalid argument:Invalid date format for input!
+0-m-yyyy
+2-06-12:Invalid argument:Invalid date format for input!
+0-mm-0
+2-06-12:Invalid argument:Invalid date format for input!
+0-m-0
+2-06-12:Invalid argument:Invalid date format for input!
+d-mm-0
+2-06-12:Invalid argument:Invalid date format for input!
+dd-mm-0
+2-06-12:Invalid argument:Invalid date format for input!
+d-m-0
+2-06-12:Invalid argument:Invalid date format for input!
+dd-m-0
+2-06-12:Invalid argument:Invalid date format for input!
+++Checking  some other exception situations
+Date d8(static_cast<Day>(35),Mar,2015):Invalid Argument:No of days in a month lies in between 1-31!!
+Date d8(D30,static_cast<Month>(13),2015):Invalid Argument:No of months in a year lies in between 1-12!!
+Date d8(D30,Mar,-2015):Invalid Argument:No of years is non negative!!
+Date d8(D31,Apr,2015):Domain Error:April has 30 days!!
+Date d8(D29,Feb,2015):Domain Error:A non-leapyear february has 28 days
+Date d8(D30,Jun,2060):Out of Range:This date does ot lie between 1st Jan 1950 and 31st Dec 2049
+Date d8(31-02-2012):Domain Error:February has 28 or 29 days !
+DateFormat=dd-mm-yyyy Date d8(31-1-2012):Invalid argument:Invalid date format!
+DateFormat=dd-mm-yyyy Date d8(7-8-2012):Invalid argument:Invalid date format!
+DateFormat=dd-mm-yyyy Date d8(07-08-12):Invalid argument:Invalid date format!
+07-08-2012+20000=
+Out of Range:This date does ot lie between 1st Jan 1950 and 31st Dec 2049
+DateFormat d40(dddddddd-mmmmmmmm-yyyyyyyyyyyyy):Invalid Date Format
++++Taking inputs from user:
+Enter a date in dd-mm-yyyy format
+New date created=12-02-2012
+Enter a date in dd-mm-yy format
+New date created=19-01-15
+Enter a date in dd-m-yyyy format
+New date created=12-12-2015
+Enter a date in dd-m-yy format
+New date created=28-9-22
+Enter a date in d-mm-yyyy format
+Invalid argument:Invalid date format!
+Enter a date in d-mm-yy format
+Invalid argument:Invalid date format!
+Enter a date in d-m-yy format
+New date created=2-11-09
+Enter a date in d-m-yyyy format
+New date created=1-2-2003
